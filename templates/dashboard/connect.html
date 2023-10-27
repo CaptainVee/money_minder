@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mono Connect test</title>
+    <style>
+        .p-5 {
+            padding: 5em;
+        }
+    </style>
+    <script type="application/javascript" src="https://connect.withmono.com/connect.js"></script>
+</head>
+<body>
+<div className="p-5">
+    <p>Welcome to Mono Connect.</p>
+    <button id="launch-btn">Link a financial account</button>
+</div>
+<script type="application/javascript">
+  const copyToClipboard = text => {
+    const elm = document.createElement('textarea');
+    elm.value = text;
+    document.body.appendChild(elm);
+    elm.select();
+    document.execCommand('copy');
+    document.body.removeChild(elm);
+  };
+  var connect;
+  var config = {
+    key: "test_pk_xqnbih8ob823p7hzr9wq",
+    onSuccess: function (response) {
+      fetch("/collect/{{ user_id }}/?"+response.code)
+        .then(response => {
+          if (response.ok) {
+            window.location.href = "/dashboard/{{ user_id }}/";
+          }
+        });
+
+    },
+  };
+  connect = new Connect(config);
+  connect.setup();
+  var launch = document.getElementById('launch-btn');
+  launch.onclick = function (e) {
+    connect.open();
+  };
+  </script>
+</body>
+</html>
+
+
+
+
+
