@@ -1,1 +1,0 @@
-$('[data-plugin="knob"]').each(function(n,a){$(this).knob()});

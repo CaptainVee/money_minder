@@ -112,3 +112,6 @@ def dashboard(request, user_id):
 
 
     return render(request, 'dashboard/dashboard.html', context)
+
+def tester(request):
+    return render(request, "dashboard/cow.html", {})

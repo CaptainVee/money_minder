@@ -1,7 +1,56 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+  }
+  .sidebar {
+    background-color: #f4f4f4;
+    float: left;
+    width: 200px;
+    height: 100vh;
+  }
+  .content {
+    margin-left: 200px;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="flex" style="display: flex; justify-content: space-between;">
+        <h1>Budgeting App</h1>
+        <div class="flex" style="margin-top: 32px;">
+            <a href="{% url 'account_login' %}">login</a>
+            <a href="{% url 'account_signup' %}">signup</a>
+        </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <ul>
+      <li>Dashboard</li>
+      <li>Expenses</li>
+      <li>Income</li>
+      <li>Reports</li>
+      <li><a href="{% url 'connect' user.id %}">Link account</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
 
-{% block content %}
 
-<h2>Landing page</h2>
-
-{% endblock content %}
