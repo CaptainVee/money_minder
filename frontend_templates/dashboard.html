@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>MoneyMiner - Dahboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description">
+    <meta content="coderthemes" name="theophilus">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Icons css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Theme Config Js -->
+    <script src="assets/js/config.js"></script>
+</head>
+
+<body>
+
+    <div class="flex wrapper">
+
+        <!-- Menu -->
+        <div class="app-menu">
+
+            <!-- Sidenav Brand Logo -->
+            <a href="dashboard.html" class="logo-box">
+                <!-- Light Brand Logo -->
+                <div class="logo-light">
+                    <img src="assets/images/logo-light.png" class="logo-lg" alt="Light logo">
+                    <img src="assets/images/logo-sm.png" class="logo-sm" alt="Small logo">
+                </div>
+
+                <!-- Dark Brand Logo -->
+                <div class="logo-dark">
+                    <img src="assets/images/logo-dark.png" class="logo-lg" alt="Dark logo">
+                    <img src="assets/images/logo-sm.png" class="logo-sm" alt="Small logo">
+                </div>
+            </a>
+
+
+
+            <!--- Menu -->
+            <div data-simplebar>
+                <!-- User Box -->
+                <div class="user-box relative text-center mt-5">
+                    <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-full h-14 w-14 p-1 border border-gray-300/30 mx-auto mb-3">
+                    <div>
+                        <button data-fc-type="dropdown" data-fc-placement="bottom" type="button" class="user-name text-[15px] font-medium mb-1.5">Nkwuda Theophilus</button>
+                        <div class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-40 z-50 transition-all duration-300 bg-white shadow-lg border rounded-lg p-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800">
+
+                            <!-- item-->
+                            <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-primary dark:text-gray-400 hover:text-white dark:hover:text-white" href="#">
+                                <i data-lucide="user" class="w-4 h-4 me-2"></i>
+                                <span>My Account</span>
+                            </a>
+
+                            <!-- item-->
+                           
+
+                            <!-- item-->
+                            <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-primary dark:text-gray-400 hover:text-white dark:hover:text-white" href="#">
+                                <i data-lucide="lock" class="w-4 h-4 me-2"></i>
+                                <span>Lock Screen</span>
+                            </a>
+
+                            <!-- item-->
+                            <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-primary dark:text-gray-400 hover:text-white dark:hover:text-white" href="#">
+                                <i data-lucide="log-out" class="w-4 h-4 me-2"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="flex justify-center gap-2 mb-4">
+                        <a href="#" class="user-name">
+                            <i class="mdi mdi-cog text-base"></i>
+                        </a>
+
+                        <a href="#" class="user-name">
+                            <i class="mdi mdi-power text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <ul class="menu" data-fc-type="accordion">
+                    <li class="menu-title">Navigation</li>
+
+                    <li class="menu-item">
+                        <a href="dashboard.html" class="menu-link">
+                            <span class="menu-icon"><i class="mdi mdi-view-dashboard-outline"></i></span>
+                            <span class="menu-text"> Dashboard </span>
+                        </a>
+                    </li>
+
+                    
+
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                            <span class="menu-icon"><i class="mdi mdi-calendar-blank-outline"></i></span>
+                            <span class="menu-text"> Transactions </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                            <span class="menu-icon"><i class="mdi mdi-forum-outline"></i></span>
+                            <span class="menu-text"> Accounts </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                            <span class="menu-icon"><i class="mdi mdi-email-outline"></i></span>
+                            <span class="menu-text"> Categories </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="email-inbox.html" class="menu-link">
+                                    <span class="menu-text">Recurring</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="email-templates.html" class="menu-link">
+                                    <span class="menu-text">Email Templates</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                            <span class="menu-icon"><i class="mdi mdi-forum-outline"></i></span>
+                            <span class="menu-text"> Recurring </span>
+                        </a>
+                    </li>
+                
+
+                   
+                    <li class="menu-title">My accounts</li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                            <span class="menu-icon"><i class="mdi mdi-account-multiple-plus-outline"></i></span>
+                            <span class="menu-text"> Linked cards</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> credit card</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text">credit card</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                            <span class="menu-icon"><i class="mdi mdi-account-multiple-plus-outline"></i></span>
+                            <span class="menu-text"> Depository </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> Checking</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text">Savings</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text">Adv Plus Banking</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                            <span class="menu-icon"><i class="mdi mdi-account-multiple-plus-outline"></i></span>
+                            <span class="menu-text"> Investment </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> Robinhood</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text">Coinbase</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text">Wealthfront</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-primary dark:text-gray-400 hover:text-white dark:hover:text-white" href="#">
+                        <i data-lucide="phone" class="w-4 h-4 me-2"></i>
+                        <span>Get help</span>
+                    </a>
+                    <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-primary dark:text-gray-400 hover:text-white dark:hover:text-white" href="#">
+                        <i data-lucide="settings" class="w-4 h-4 me-2"></i>
+                        <span>Settings</span>
+                    </a>
+                   
+                    <!-- <li class="menu-item">
+                        <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                            <span class="menu-icon"><i class="mdi mdi-account-multiple-plus-outline"></i></span>
+                            <span class="menu-text"> Auth Pages </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <ul class="sub-menu hidden">
+                            <li class="menu-item">
+                                <a href="auth-login.html" class="menu-link">
+                                    <span class="menu-text">Log In</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="auth-register.html" class="menu-link">
+                                    <span class="menu-text">Register</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="auth-recoverpw.html" class="menu-link">
+                                    <span class="menu-text">Recover Password</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="auth-lock-screen.html" class="menu-link">
+                                    <span class="menu-text">Lock Screen</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="auth-confirm-mail.html" class="menu-link">
+                                    <span class="menu-text">Confirm Mail</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="auth-logout.html" class="menu-link">
+                                    <span class="menu-text">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> -->
+
+                </ul>
+            </div>
+        </div>
+        <!-- Sidenav Menu End  -->
+        
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="page-content">
+
+            <!-- Topbar Start -->
+            <header class="app-header">
+                <div class="flex items-center px-6 gap-3">
+                    <!-- Brand Logo -->
+                    <a href="dashboard.html" class="logo-box">
+                        <!-- Light Brand Logo -->
+                        <div class="logo-light">
+                            <img src="assets/images/logo-light.png" class="logo-lg" alt="Light logo">
+                            <img src="assets/images/logo-sm.png" class="logo-sm" alt="Small logo">
+                        </div>
+
+                        <!-- Dark Brand Logo -->
+                        <div class="logo-dark">
+                            <img src="assets/images/logo-dark.png" class="logo-lg" alt="Dark logo">
+                            <img src="assets/images/logo-sm.png" class="logo-sm" alt="Small logo">
+                        </div>
+                    </a>
+
+                    <!-- Sidenav Menu Toggle Button -->
+                    <button id="button-toggle-menu" class="nav-link p-2">
+                        <span class="sr-only">Menu Toggle Button</span>
+                        <span class="flex items-center justify-center h-6 w-6">
+                            <i data-lucide="menu" class="w-6 h-6 text-xl"></i>
+                        </span>
+                    </button>
+
+                    <!-- Page Title -->
+                    <div class="me-auto">
+                        <div class="md:flex hidden">
+                            <h4 class="page-title text-lg">Dashboard</h4>
+                        </div>
+                    </div>
+
+                    <div class="md:flex hidden items-center relative">
+                        <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+                            <i class="mdi mdi-magnify text-base opacity-60 -z-10"></i>
+                        </div>
+                        <input type="search" class="form-input pe-8 ps-4 rounded-full bg-gray-500/10 border-transparent focus:border-transparent placeholder:opacity-60" placeholder="Search...">
+                    </div>
+
+                    <!-- Light/Dark Toggle Button -->
+                    <div class="flex">
+                        <button id="light-dark-mode" type="button" class="nav-link p-2">
+                            <span class="sr-only">Light/Dark Mode</span>
+                            <span class="flex items-center justify-center h-6 w-6">
+                                <i data-lucide="moon" class="block dark:hidden"></i>
+                                <i data-lucide="sun" class="hidden dark:block"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                    <!-- Notification Bell Button -->
+                    <div class="relative md:flex hidden">
+                        <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button" class="nav-link p-2">
+                            <span class="sr-only">View notifications</span>
+                            <span class="flex items-center justify-center h-6 w-6">
+                                <i data-lucide="bell"></i>
+                                <span class="absolute top-3 end-1.5 w-4 h-4 flex items-center justify-center rounded-full bg-danger text-white  font-medium text-[10px]">9</span>
+                            </span>
+                        </button>
+                        <div class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-80 z-50 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg">
+
+                            <div class="p-4">
+                                <div class="flex items-center justify-between">
+                                    <h6 class="text-sm"> Notification</h6>
+                                    <a href="javascript: void(0);" class="text-gray-500">
+                                        <small>Clear All</small>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="p-4 h-80" data-simplebar>
+                                <h5 class="text-xs text-gray-500 dark:text-gray-300 mb-2">Today</h5>
+
+                                <a href="javascript:void(0);" class="block mb-4">
+                                    <div class="card-body">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="flex justify-center items-center h-9 w-9 rounded-full bg text-white bg-primary">
+                                                    <i class="mdi mdi-comment-account-outline text-lg"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow truncate ms-2">
+                                                <h5 class="text-sm font-semibold mb-1">Datacorp <small class="font-normal text-gray-500 ms-1">1 min ago</small></h5>
+                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="block mb-4">
+                                    <div class="card-body">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="flex justify-center items-center h-9 w-9 rounded-full bg-info text-white">
+                                                    <i class="mdi mdi-heart text-lg"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow truncate ms-2">
+                                                <h5 class="text-sm font-semibold mb-1">Admin <small class="font-normal text-gray-500 ms-1">1 hr ago</small></h5>
+                                                <small class="noti-item-subtitle text-muted">New user registered</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="block mb-4">
+                                    <div class="card-body">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0">
+                                                <img src="assets/images/users/avatar-2.jpg" class="rounded-full h-9 w-9" alt="">
+                                            </div>
+                                            <div class="flex-grow truncate ms-2">
+                                                <h5 class="text-sm font-semibold mb-1">Cristina Pride <small class="font-normal text-gray-500 ms-1">1 day ago</small></h5>
+                                                <small class="noti-item-subtitle text-muted">Hi, How are you? What about our next meeting</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <h5 class="text-xs text-gray-500 mb-2">Yesterday</h5>
+
+                                <a href="javascript:void(0);" class="block mb-4">
+                                    <div class="card-body">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="flex justify-center items-center h-9 w-9 rounded-full bg-primary text-white">
+                                                    <i class="mdi mdi-account-plus text-lg"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow truncate ms-2">
+                                                <h5 class="text-sm font-semibold mb-1">Datacorp</h5>
+                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript:void(0);" class="block">
+                                    <div class="card-body">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0">
+                                                <img src="assets/images/users/avatar-4.jpg" class="rounded-full h-9 w-9" alt="">
+                                            </div>
+                                            <div class="flex-grow truncate ms-2">
+                                                <h5 class="text-sm font-semibold mb-1">Karen Robinson</h5>
+                                                <small class="noti-item-subtitle text-muted">Wow ! this admin looks good and awesome design</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <a href="javascript:void(0);" class="p-2 border-t border-dashed border-gray-200 dark:border-gray-700 block text-center text-primary underline font-semibold">
+                                View All
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Profile Dropdown Button -->
+                    <div class="relative">
+                        <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button" class="nav-link flex items-center">
+                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-full h-8 w-8">
+                            <span class="text-sm mx-2">Nowak</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </button>
+                        <div class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-44 z-50 transition-[margin,opacity] duration-300 bg-white shadow-lg border rounded py-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800">
+                            <h6 class="py-2 px-5">Welcome !</h6>
+
+                            <a class="flex items-center py-2 px-5 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="pages-gallery.html">
+                                <i data-lucide="user" class="w-4 h-4 me-2"></i>
+                                <span>My Account</span>
+                            </a>
+                            <a class="flex items-center py-2 px-5 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="apps-kanban.html">
+                                <i data-lucide="settings" class="w-4 h-4 me-2"></i>
+                                <span>Settings</span>
+                            </a>
+                            <a class="flex items-center py-2 px-5 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="auth-login.html">
+                                <i data-lucide="lock" class="w-4 h-4 me-2"></i>
+                                <span>Lock Screen</span>
+                            </a>
+                            <hr class="my-2 -mx-2 border-gray-200 dark:border-gray-700">
+                            <a class="flex items-center py-2 px-5 text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="auth-login.html">
+                                <i data-lucide="log-out" class="w-4 h-4 me-2"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Customization Button -->
+                    <div class="flex">
+                        <button type="button" class="nav-link p-2" data-fc-type="offcanvas" data-fc-target="theme-customization" data-fc-scroll="true" >
+                            <span class="sr-only">Customization Button</span>
+                            <span class="flex items-center justify-center h-6 w-6">
+                                <i data-lucide="settings"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <!-- Topbar End -->
+
+            <main class="p-6">
+
+                <div class="flex flex-col gap-6">
+
+                    <div class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-11">
+                                    <h4 class="card-title">Total Expenses</h4>
+
+                                    <div class="z-10">
+                                        <button data-fc-target="dropdown-target1" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
+                                            <i class="mdi mdi-dots-vertical text-xl"></i>
+                                        </button>
+
+                                        <div id="dropdown-target1" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                Action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Another action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Something else
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Separated link
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between">
+                                    <div dir="ltr">
+                                        <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 " data-bgColor="#F9B9B9" value="58" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                    </div>
+
+                                    <div class="text-end">
+                                        <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1"> 256 </h2>
+                                        <p class="text-gray-400 font-normal">Total Expenses </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- card-end -->
+
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h4 class="card-title">Total Income</h4>
+
+                                    <div>
+                                        <button data-fc-target="dropdown-target2" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
+                                            <i class="mdi mdi-dots-vertical text-xl"></i>
+                                        </button>
+
+                                        <div id="dropdown-target2" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                Action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Another action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Something else
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Separated link
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between">
+                                    <div class="bg-success text-white rounded-full text-xs px-2 py-0.5">32% <i class="mdi mdi-trending-up"></i></div>
+
+                                    <div class="text-end">
+                                        <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1"> 8451 </h2>
+                                        <p class="text-gray-400 font-normal">Total Income</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="flex w-full h-[5px] bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700 mt-6">
+                                    <div class="flex flex-col justify-center overflow-hidden bg-success" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="flex flex-col justify-center overflow-hidden bg-success/10" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div> <!-- card-end -->
+
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-11">
+                                    <h4 class="card-title">Statistics</h4>
+
+                                    <div class="z-10">
+                                        <button data-fc-target="dropdown-target3" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
+                                            <i class="mdi mdi-dots-vertical text-xl"></i>
+                                        </button>
+
+                                        <div id="dropdown-target3" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                Action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Another action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Something else
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Separated link
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between">
+                                    <div class="widget-chart-box-1" dir="ltr">
+                                        <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#ffbd4a" data-bgColor="#FFE6BA" value="80" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                    </div>
+
+                                    <div class="text-end">
+                                        <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1"> 4569 </h2>
+                                        <p class="text-gray-400 font-normal">Revenue today</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- card-end -->
+
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h4 class="card-title">Daily Expenses</h4>
+
+                                    <div>
+                                        <button data-fc-target="dropdown-target4" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
+                                            <i class="mdi mdi-dots-vertical text-xl"></i>
+                                        </button>
+
+                                        <div id="dropdown-target4" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                Action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Another action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Something else
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Separated link
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between">
+                                    <div class="bg-pink text-white rounded-full text-xs px-2 py-0.5">32% <i class="mdi mdi-trending-up"></i></div>
+
+                                    <div class="text-end">
+                                        <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1"> 158 </h2>
+                                        <p class="text-gray-400 font-normal">Expenses today</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="flex w-full h-[5px] bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700 mt-6">
+                                    <div class="flex flex-col justify-center overflow-hidden bg-pink" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="flex flex-col justify-center overflow-hidden bg-pink/10" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div> <!-- card-end -->
+                    </div> <!-- grid-end -->
+
+                    <div class="grid xl:grid-cols-3 grid-cols-1 gap-6">
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h4 class="card-title">Budgets Analysis</h4>
+
+                                    <div class="z-10">
+                                        <button data-fc-target="dropdown-target7" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
+                                            <i class="mdi mdi-dots-vertical text-xl"></i>
+                                        </button>
+
+                                        <div id="dropdown-target7" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                Action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Another action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Something else
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Separated link
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="widget-chart text-center">
+                                    <div id="morris-donut-example" dir="ltr" style="height: 245px;" class="morris-chart"></div>
+                                    <ul class="list-inline chart-detail-list mb-0">
+                                        <li class="list-inline-item">
+                                            <h5 style="color: #ff8acc;"><i class="fa fa-circle me-1"></i>Series A</h5>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <h5 style="color: #5b69bc;"><i class="fa fa-circle me-1"></i>Series B</h5>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> <!-- card-end -->
+
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h4 class="card-title">Statistics</h4>
+
+                                    <div class="z-10">
+                                        <button data-fc-target="dropdown-target8" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
+                                            <i class="mdi mdi-dots-vertical text-xl"></i>
+                                        </button>
+
+                                        <div id="dropdown-target8" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                Action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Another action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Something else
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Separated link
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="morris-bar-example" dir="ltr" style="height: 280px;" class="morris-chart"></div>
+                            </div>
+                        </div> <!-- card-end -->
+
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h4 class="card-title">Total Revenue</h4>
+
+                                    <div class="z-10">
+                                        <button data-fc-target="dropdown-target9" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
+                                            <i class="mdi mdi-dots-vertical text-xl"></i>
+                                        </button>
+
+                                        <div id="dropdown-target9" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                Action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Another action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Something else
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Separated link
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="morris-line-example" dir="ltr" style="height: 280px;" class="morris-chart"></div>
+                            </div>
+                        </div> <!-- card-end -->
+                    </div> <!-- grid-end -->
+
+                    <div class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
+                        <div>
+                            Featured Budget plan
+                        </div>
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center gap-6">
+                                    <img src="assets/images/users/user-3.jpg" class="rounded-full h-16" alt="user">
+
+                                    <div class="flex-grow overflow-hidden">
+                                        <h5 class="text-gray-800 dark:text-white mb-1 capitalize ">purchase car</h5>
+                                        <p class="mb-2 text-xl text-gray-400 font-normal truncate">Amount: <span class="text-danger">$1,0000</span></p>
+                                        <p class="text-warning font-semibold text-sm">Amount saved: <span>$5,000</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center gap-6">
+                                    <img src="assets/images/users/user-3.jpg" class="rounded-full h-16" alt="user">
+
+                                    <div class="flex-grow overflow-hidden">
+                                        <h5 class="text-gray-800 dark:text-white mb-1 capitalize ">school fee</h5>
+                                        <p class="mb-2 text-xl text-gray-400 font-normal truncate">Amount: <span class="text-danger">$1,0000</span></p>
+                                        <p class="text-warning font-semibold text-sm">Amount saved: <span>$5,000</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="card">
+                            <div class="p-6">
+                                <div class="flex items-center gap-6">
+                                    <img src="assets/images/users/user-3.jpg" class="rounded-full h-16" alt="user">
+
+                                    <div class="flex-grow overflow-hidden">
+                                        <h5 class="text-gray-800 dark:text-white mb-1 capitalize ">Residential building</h5>
+                                        <p class="mb-2 text-xl text-gray-400 font-normal truncate">Amount: <span class="text-danger">$1,0000</span></p>
+                                        <p class="text-warning font-semibold text-sm">Amount saved: <span>$5,000</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  <!-- card-end -->
+
+
+                        
+                    </div> <!-- grid-end -->
+
+                    <div class="grid xl:grid-cols-3 grid-cols-1 gap-6">
+                        <div class="card">
+                            <div class="p-6">
+
+                                <div class="flex items-center justify-between mb-6">
+                                    <h4 class="card-title">Budgets</h4>
+
+                                    <div>
+                                        <button data-fc-target="dropdown-target5" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
+                                            <i class="mdi mdi-dots-vertical text-xl"></i>
+                                        </button>
+
+                                        <div id="dropdown-target5" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                Action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Another action
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Something else
+                                            </a>
+                                            <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                Separated link
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="overflow-x-auto">
+                                    <div class="min-w-full inline-block align-middle">
+                                        <div class="overflow-hidden">
+                                            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                                <thead>
+                                                    <tr class="border-b-2 dark:border-gray-700">
+                                                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">#</th>
+                                                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Project Name</th>
+                                                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Start Date</th>
+                                                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Due Date</th>
+                                                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Status</th>
+                                                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200"> Assign</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                                    <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">1</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">26/04/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                            <span class="text-xs text-white bg-danger rounded-md px-1 py-0.5">Released</span>
+                                                        </td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
+                                                    </tr>
+
+                                                    <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">2</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Frontend v1</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">26/04/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                            <span class="text-xs text-white bg-success rounded-md px-1 py-0.5">Released</span>
+                                                        </td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto admin</td>
+                                                    </tr>
+
+                                                    <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">3</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.1</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/05/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">10/05/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                            <span class="text-xs text-white bg-pink rounded-md px-1 py-0.5">Pending</span>
+                                                        </td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
+                                                    </tr>
+
+                                                    <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">4</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Frontend v1.1</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                            <span class="text-xs text-white bg-purple rounded-md px-1 py-0.5">Work in Progress</span>
+                                                        </td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto admin</td>
+                                                    </tr>
+
+                                                    <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">5</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.3</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                            <span class="text-xs text-white bg-warning rounded-md px-1 py-0.5">Coming soon</span>
+                                                        </td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
+                                                    </tr>
+
+                                                    <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">6</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.3</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                            <span class="text-xs text-white bg-primary rounded-md px-1 py-0.5">Coming soon</span>
+                                                        </td>
+                                                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400"> Adminto admin</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- card-end -->
+
+                        <div class="xl:col-span-2 col-span-1">
+                            <div class="card">
+                                <div class="p-6">
+
+                                    <div class="flex items-center justify-between mb-6">
+                                        <h3 class="card-title">Transaction History</h3>
+
+                                        <div>
+                                            <button data-fc-target="dropdown-target6" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
+                                                <i class="mdi mdi-dots-vertical text-xl"></i>
+                                            </button>
+
+                                            <div id="dropdown-target6" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
+                                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
+                                                    Action
+                                                </a>
+                                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                    Another action
+                                                </a>
+                                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                    Something else
+                                                </a>
+                                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
+                                                    Separated link
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="overflow-x-auto">
+                                        <div class="min-w-full inline-block align-middle">
+                                            <div class="overflow-hidden">
+                                                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                                    <thead>
+                                                        <tr class="border-b-2 dark:border-gray-700">
+                                                            <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">#</th>
+                                                            <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200"></th>
+                                                            <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Start Date</th>
+                                                            <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Due Date</th>
+                                                            <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Status</th>
+                                                            <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200"> Assign</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">1</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">26/04/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                                <span class="text-xs text-white bg-danger rounded-md px-1 py-0.5">Released</span>
+                                                            </td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
+                                                        </tr>
+
+                                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">2</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Frontend v1</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">26/04/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                                <span class="text-xs text-white bg-success rounded-md px-1 py-0.5">Released</span>
+                                                            </td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto admin</td>
+                                                        </tr>
+
+                                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">3</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.1</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/05/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">10/05/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                                <span class="text-xs text-white bg-pink rounded-md px-1 py-0.5">Pending</span>
+                                                            </td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
+                                                        </tr>
+
+                                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">4</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Frontend v1.1</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                                <span class="text-xs text-white bg-purple rounded-md px-1 py-0.5">Work in Progress</span>
+                                                            </td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto admin</td>
+                                                        </tr>
+
+                                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">5</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.3</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                                <span class="text-xs text-white bg-warning rounded-md px-1 py-0.5">Coming soon</span>
+                                                            </td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
+                                                        </tr>
+
+                                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">6</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.3</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                                <span class="text-xs text-white bg-primary rounded-md px-1 py-0.5">Coming soon</span>
+                                                            </td>
+                                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400"> Adminto admin</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- card-end -->
+                    </div> <!-- grid-end -->
+
+                </div> <!-- flex-end -->
+
+            </main>
+
+            <!-- Footer Start -->
+            <footer class="footer card rounded-none mt-auto">
+                <div class="h-16 flex items-center px-8 rounded-none">
+                    <div class="flex md:justify-between justify-center w-full gap-4">
+                        <div>
+                            <script>document.write(new Date().getFullYear())</script> © Adminto - <a href="https://coderthemes.com/" target="_blank">Coderthemes</a>
+                        </div>
+                        <div class="md:flex hidden gap-4 item-center md:justify-end">
+                            <a href="javascript: void(0);" class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">About</a>
+                            <a href="javascript: void(0);" class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Help</a>
+                            <a href="javascript: void(0);" class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer End -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+
+    <!-- Theme Settings -->
+    <div>
+        <!-- Theme Settings Offcanvas -->
+        <div id="theme-customization" class="fc-offcanvas-open:translate-x-0 hidden translate-x-full rtl:-translate-x-full fixed inset-y-0 end-0
+             transition-all duration-300 transform max-w-[260px] w-full z-50 bg-white dark:bg-gray-800" tabindex="-1">
+            <div class="h-16 bg-primary text-white flex items-center px-6 gap-3">
+                <h5 class="text-base grow">Theme Customizer</h5>
+                <button type="button" class="h-6 w-6 flex items-center justify-center rounded-full bg-dark text-white" data-fc-dismiss><i class="mdi mdi-close text-sm"></i></button>
+            </div>
+
+            <div class="h-[calc(100vh-64px)]" data-simplebar>
+                <div class="p-6">
+                    <div class="py-3 px-5 border border-warning/25 bg-warning/20 text-warning rounded mb-6" role="alert">
+                        <span class="font-medium">Customize </span> the overall color scheme, Layout, etc.
+                    </div>
+                
+                    <div class="mb-4">
+                        <h5 class="font-semibold text-sm mb-3">Color Scheme</h5>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-mode" id="layout-color-light" value="light">
+                                <label class="ms-2" for="layout-color-light">Light</label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-mode" id="layout-color-dark" value="dark">
+                                <label class="ms-2" for="layout-color-dark"> Dark </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-semibold text-sm mb-3">Direction</h5>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="dir" id="direction-ltr" value="ltr">
+                                <label class="ms-2" for="direction-ltr"> LTR </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="dir" id="direction-rtl" value="rtl">
+                                <label class="ms-2" for="direction-rtl"> RTL </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-semibold text-sm mb-3">Layout Position (Menu and Topbar)</h5>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-layout-position" id="layout-position-fixed" value="fixed">
+                                <label class="ms-2" for="layout-position-fixed"> Fixed </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
+                                <label class="ms-2" for="layout-position-scrollable"> Scrollable </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 2xl:block hidden">
+                        <h5 class="font-semibold text-sm mb-3">Width</h5>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-layout-width" id="layout-mode-default" value="default">
+                                <label class="ms-2" for="layout-mode-default"> Fluid </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-layout-width" id="layout-mode-boxed" value="boxed">
+                                <label class="ms-2" for="layout-mode-boxed"> Boxed </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4" id="leftSidebarSize">
+                        <h5 class="font-semibold text-sm mb-3">Left Sidebar Size</h5>
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-sidenav-view" id="sidenav-view-default" value="default">
+                                <label class="ms-2" for="sidenav-view-default"> Default </label>
+                            </div>
+
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-sidenav-view" id="sidenav-view-condensed" value="condensed">
+                                <label class="ms-2" for="sidenav-view-condensed"> Condensed (Small) </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-sidenav-view" id="sidenav-view-compact" value="compact">
+                                <label class="ms-2" for="sidenav-view-compact"> Compact </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-sidenav-view" id="sidenav-view-mobile" value="mobile">
+                                <label class="ms-2" for="sidenav-view-mobile"> Mobile </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-sidenav-view" id="sidenav-view-hidden" value="hidden">
+                                <label class="ms-2" for="sidenav-view-hidden">Hidden </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-semibold text-sm mb-3">Menu Color</h5>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-menu-color" id="menu-color-light" value="light">
+                                <label class="ms-2" for="menu-color-light"> Light </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-menu-color" id="menu-color-dark" value="dark">
+                                <label class="ms-2" for="menu-color-dark"> Dark </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-menu-color" id="menu-color-brand" value="brand">
+                                <label class="ms-2" for="menu-color-brand"> Brand </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-menu-color" id="menu-color-gradient" value="gradient">
+                                <label class="ms-2" for="menu-color-gradient"> Gradient </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h5 class="font-semibold text-sm mb-3">Topbar Color</h5>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-topbar-color" id="topbar-color-light" value="light">
+                                <label class="ms-2" for="topbar-color-light"> Light </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input class="form-switch form-switch-sm text-primary" type="checkbox" name="data-topbar-color" id="topbar-color-dark" value="dark">
+                                <label class="ms-2" for="topbar-color-dark"> Dark </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn bg-primary text-white w-full" id="reset-layout">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plugin Js -->
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/lucide/umd/lucide.min.js"></script>
+    <script src="assets/libs/%40frostui/tailwindcss/frostui.js"></script>
+
+    <!-- App Js -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- knob plugin -->
+    <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+
+    <!--Morris Chart-->
+    <script src="assets/libs/morris.js06/morris.min.js"></script>
+    <script src="assets/libs/raphael/raphael.min.js"></script>
+
+    <!-- Dashboard App js -->
+    <script src="assets/js/pages/dashboard.init.js"></script>
+
+</body>
+
+
+<!-- Mirrored from coderthemes.com/adminto-tw/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Oct 2023 11:40:50 GMT -->
+</html>
