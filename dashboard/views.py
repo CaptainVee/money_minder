@@ -30,14 +30,13 @@ User = get_user_model()
 
 
 
-
 def home(request):
     if request.user.is_authenticated:
         return render(request, "dashboard/dashboard.html", {})
     else:
         return render(request, "landing_page.html", {})
 
-
+@login_required
 def connect(request, user_id):
     user = get_object_or_404(User, id=user_id)
     context = {
@@ -93,7 +92,7 @@ def collect(request, user_id):
     return redirect('accounts')
 
 
-
+@login_required
 def get_live_data(request):
 
     bank_accounts = BankAccount.objects.filter(user=request.user)
@@ -139,7 +138,7 @@ def get_live_data(request):
             )
 
     return redirect('dashboard')
-
+@login_required
 def dashboard(request):
     accounts = BankAccount.objects.filter(user=request.user)
     networth = sum(account.account_balance for account in accounts)
@@ -195,7 +194,7 @@ def dashboard(request):
     return render(request, 'dashboard/dashboard.html', context)
 
 
-
+@login_required
 def budget(request):
     budgets = Budget.objects.filter(user=request.user)
     if request.method == 'POST':
@@ -209,7 +208,7 @@ def budget(request):
         form = BudgetForm()
     return render(request, 'dashboard/budget.html', {'budgets': budgets, 'form': form})
 
-
+@login_required
 def update_transaction(request, transaction_id):
     transaction = get_object_or_404(Transaction, pk=transaction_id)
     budget_id = request.POST.get('budget')
@@ -218,12 +217,12 @@ def update_transaction(request, transaction_id):
     transaction.save()
     return HttpResponse(f"{transaction.budget.title}")
 
-
+@login_required
 def accounts(request):
     accounts = BankAccount.objects.filter(user=request.user)
     return render(request, 'dashboard/account.html', {'accounts': accounts})
 
-
+@login_required
 def tester(request):
     return render(request, "dashboard/cow.html", {})
 
