@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="bg-gray-100 p-6">
+    <div class="text-2xl font-bold mb-4">Connected Bank Accounts</div>
+    <div class="grid grid-cols-2 gap-4">
+        <!-- Customer 1 -->
+        {% for account in accounts %}
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-lg font-bold mb-2">{{ account.account_name }}</h2>
+            <p class="text-gray-700"><span class="font-semibold">Account Number:</span> {{ account.account_number }}</p>
+            <p class="text-gray-700"><span class="font-semibold">Bank:</span> {{ account.bank }}</p>
+            <p class="text-gray-700"><span class="font-semibold">Balance:</span> ${{ account.account_balance }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="flex items-center justify-center mt-4">
+        <a href="{% url 'connect' user.id %}" class="bg-success hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center">
+            <i class="fas fa-plus mr-2"></i>
+            <span>Add Account</span>
+        </a>
+    </div>
+</div>
+
+{% endblock content %}

@@ -5,6 +5,10 @@ from .views import (
     connect,
     dashboard,
     tester,
+    get_live_data,
+    budget,
+    update_transaction,
+    accounts
 )
 
 # app_name = "courses"
@@ -14,6 +18,11 @@ urlpatterns = [
     path("test", tester, name="test"),
     path("collect/<uuid:user_id>/", collect, name="collect"),
     path("connect/<uuid:user_id>/", connect, name="connect"),
-    path("dashboard/<uuid:user_id>/", dashboard, name="dashboard"),
+    path("dashboard/", dashboard, name="dashboard"),
+    path("get_live_data/", get_live_data, name="get_live_data"),
+    path("budget/", budget, name="budget"),
+    path("accounts/", accounts, name="accounts"),
+
+    path('update_transaction/<int:transaction_id>/', update_transaction, name='update_transaction'),
 ]
 

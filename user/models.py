@@ -46,11 +46,15 @@ class User(AbstractUser):
 class Profile(BaseModel):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=False, null=False, related_name='profile')
     total_balance = models.PositiveSmallIntegerField(default=0)
-    auth_id = models.JSONField(max_length=100, blank=True, null=True)
+    
 
 
 class BankAccount(BaseModel):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, blank=False, null=False)
-    account_name = models.CharField(max_length=120, blank=False, null=False)
-    account_number = models.PositiveIntegerField(blank=False, null=False)
-    bank = models.CharField(max_length=120, blank=False, null=False)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=False, null=False)
+    account_name = models.CharField(max_length=120, blank=False, null=True)
+    account_number = models.CharField(max_length=20, blank=False, null=True)
+    bank = models.CharField(max_length=120, blank=False, null=True)
+    bvn = models.CharField(max_length=25, blank=False, null=True)
+    account_balance = models.IntegerField(default=0)
+    currency = models.CharField(max_length=10, null=True)
+    auth_id = models.JSONField(max_length=100, blank=False, null=False)

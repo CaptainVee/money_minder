@@ -7,11 +7,12 @@
 
     <div class="flex flex-col gap-6">
 
-        <div class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
+        <div class="grid xl:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-6">
+            <!-- Total expences card start -->
             <div class="card">
                 <div class="p-6">
                     <div class="flex items-center justify-between mb-11">
-                        <h4 class="card-title">Total Expenses</h4>
+                        <h4 class="card-title">Total Budget</h4>
 
                         <div class="z-10">
                             <button data-fc-target="dropdown-target1" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
@@ -19,39 +20,36 @@
                             </button>
 
                             <div id="dropdown-target1" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Action
+                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="{% url 'budget' %}">
+                                    Create Budget
                                 </a>
                                 <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
                                     Another action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Something else
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Separated link
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <div class="flex items-center justify-between">
-                        <div dir="ltr">
-                            <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050 " data-bgColor="#F9B9B9" value="58" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                        </div>
 
                         <div class="text-end">
-                            <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1"> 256 </h2>
-                            <p class="text-gray-400 font-normal">Total Expenses </p>
+                            <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1"> ₦ {{ total_budget }} </h2>
+                            <p class="text-gray-400 font-normal">Total Budget </p>
                         </div>
                     </div>
+                    
+                        <div>
+                            <canvas id="budgetChart"></canvas>
+                        </div>
                 </div>
-            </div> <!-- card-end -->
+            </div> 
+            <!-- Total expences end -->
 
+            <!-- Total income card start -->
             <div class="card">
                 <div class="p-6">
                     <div class="flex items-center justify-between mb-6">
-                        <h4 class="card-title">Total Income</h4>
+                        <h4 class="card-title">Net Worth</h4>
 
                         <div>
                             <button data-fc-target="dropdown-target2" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
@@ -79,259 +77,113 @@
                         <div class="bg-success text-white rounded-full text-xs px-2 py-0.5">32% <i class="mdi mdi-trending-up"></i></div>
 
                         <div class="text-end">
-                            <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1"> 8451 </h2>
-                            <p class="text-gray-400 font-normal">Total Income</p>
+                            <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1">₦ {{networth }} </h2>
+                            <p class="text-gray-400 font-normal">Net Worth</p>
                         </div>
 
                     </div>
-
-                    <div class="flex w-full h-[5px] bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700 mt-6">
-                        <div class="flex flex-col justify-center overflow-hidden bg-success" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="flex flex-col justify-center overflow-hidden bg-success/10" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
                 </div>
-            </div> <!-- card-end -->
+                <div >
+                    <canvas id="networthChart"></canvas>
+                </div>
+            </div>
 
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-11">
-                        <h4 class="card-title">Statistics</h4>
+            <!-- Total income card end -->
 
-                        <div class="z-10">
-                            <button data-fc-target="dropdown-target3" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
-                                <i class="mdi mdi-dots-vertical text-xl"></i>
-                            </button>
+        </div> 
+        <!-- grid-end -->
 
-                            <div id="dropdown-target3" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Another action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Something else
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Separated link
-                                </a>
+        <div class="grid xl:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6">
+            <!-- Budget analysis card start -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-lg font-bold mb-4">Recurring bills</h2>
+                <div class="flex justify-between gap-4">
+
+                    <div class="flex flex-wrap m-4">
+                        <!-- Card 1 -->
+                        {% for bill in recurring_bills %}
+                        <div class="w-1/3 md:w-1/3 p-4">
+                            <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                                <i class="fas fa-wallet text-4xl text-gray-500 mb-4"></i>
+                                <h2 class="text-lg font-bold mb-2">{{ bill.title }}</h2>
+                                <p class="text-l text-green-500 font-bold mb-4">₦{{ bill.amount }}</p>
+                                <p class="text-sm text-gray-400">{{ bill.pk }}</p>
                             </div>
                         </div>
-                    </div>
+                        {% endfor %}
 
-                    <div class="flex items-center justify-between">
-                        <div class="widget-chart-box-1" dir="ltr">
-                            <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#ffbd4a" data-bgColor="#FFE6BA" value="80" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                        </div>
-
-                        <div class="text-end">
-                            <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1"> 4569 </h2>
-                            <p class="text-gray-400 font-normal">Revenue today</p>
-                        </div>
-                    </div>
+                    </div>     
+                
+                
+                
                 </div>
-            </div> <!-- card-end -->
+            </div>
 
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-6">
-                        <h4 class="card-title">Daily Expenses</h4>
 
-                        <div>
-                            <button data-fc-target="dropdown-target4" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
-                                <i class="mdi mdi-dots-vertical text-xl"></i>
-                            </button>
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-lg font-bold mb-4">Top Categories</h2>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category Name</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Replace this section with Django template syntax -->
+                        {% for category in top_5_budgets %}
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ category.title }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${{ category.amount }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">                    <div class="flex w-full h-[5px] bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700 mt-6">
+                                <div class="flex flex-col justify-center overflow-hidden bg-success" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="flex flex-col justify-center overflow-hidden bg-success/10" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Budget analysis card end -->
 
-                            <div id="dropdown-target4" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Another action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Something else
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Separated link
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <!-- starts -->
+        </div> 
+        <!-- grid-end -->
 
-                    <div class="flex items-center justify-between">
-                        <div class="bg-pink text-white rounded-full text-xs px-2 py-0.5">32% <i class="mdi mdi-trending-up"></i></div>
-
-                        <div class="text-end">
-                            <h2 class="text-3xl font-normal text-gray-800 dark:text-white mb-1"> 158 </h2>
-                            <p class="text-gray-400 font-normal">Expenses today</p>
-                        </div>
-
-                    </div>
-
-                    <div class="flex w-full h-[5px] bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700 mt-6">
-                        <div class="flex flex-col justify-center overflow-hidden bg-pink" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="flex flex-col justify-center overflow-hidden bg-pink/10" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div> <!-- card-end -->
-        </div> <!-- grid-end -->
-
-        <div class="grid xl:grid-cols-3 grid-cols-1 gap-6">
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-6">
-                        <h4 class="card-title">Budgets Analysis</h4>
-
-                        <div class="z-10">
-                            <button data-fc-target="dropdown-target7" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
-                                <i class="mdi mdi-dots-vertical text-xl"></i>
-                            </button>
-
-                            <div id="dropdown-target7" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Another action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Something else
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Separated link
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="widget-chart text-center">
-                        <div id="morris-donut-example" dir="ltr" style="height: 245px;" class="morris-chart"></div>
-                        <ul class="list-inline chart-detail-list mb-0">
-                            <li class="list-inline-item">
-                                <h5 style="color: #ff8acc;"><i class="fa fa-circle me-1"></i>Series A</h5>
-                            </li>
-                            <li class="list-inline-item">
-                                <h5 style="color: #5b69bc;"><i class="fa fa-circle me-1"></i>Series B</h5>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> <!-- card-end -->
-
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-6">
-                        <h4 class="card-title">Statistics</h4>
-
-                        <div class="z-10">
-                            <button data-fc-target="dropdown-target8" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
-                                <i class="mdi mdi-dots-vertical text-xl"></i>
-                            </button>
-
-                            <div id="dropdown-target8" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Another action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Something else
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Separated link
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="morris-bar-example" dir="ltr" style="height: 280px;" class="morris-chart"></div>
-                </div>
-            </div> <!-- card-end -->
-
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-6">
-                        <h4 class="card-title">Total Revenue</h4>
-
-                        <div class="z-10">
-                            <button data-fc-target="dropdown-target9" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
-                                <i class="mdi mdi-dots-vertical text-xl"></i>
-                            </button>
-
-                            <div id="dropdown-target9" class="hidden bg-white shadow rounded border dark:border-slate-700 fc-dropdown-open:translate-y-0 translate-y-3 origin-center transition-all duration-300 py-2 dark:bg-gray-800">
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-stone-100 dark:hover:bg-slate-700 dark:hover:text-gray-200" href="javascript:void(0)">
-                                    Action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Another action
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Something else
-                                </a>
-                                <a class="flex items-center py-1.5 px-5 text-sm transition-all duration-300 bg-transparent text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300" href="javascript:void(0)">
-                                    Separated link
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="morris-line-example" dir="ltr" style="height: 280px;" class="morris-chart"></div>
-                </div>
-            </div> <!-- card-end -->
-        </div> <!-- grid-end -->
-
+        <!-- Features 1  start -->
         <div class="bg-slate-700 card-title p-5">
             Featured Budget plan
         </div>
+        <!-- Features1 end -->
+
+        <!-- Features2 start -->
         <div class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
             
+            {% for budget in budgets %}
             <div class="card">
                 <div class="p-6">
                     <div class="flex items-center gap-6">
-                        <img src="{% static '/img/users/user-3.jpg' %}" class="rounded-full h-16" alt="user">
+                        <div dir="ltr">
+                            <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050" data-bgColor="#F9B9B9" value="{{ budget.calculate_total_transactons }}" data-skin="tron" data-angleOffset="180" data-readOnly="true" data-thickness=".15" data-max="{{ budget.amount }}"/>
+                        </div>
 
                         <div class="flex-grow overflow-hidden">
-                            <h5 class="text-gray-800 dark:text-white mb-1 capitalize ">purchase car</h5>
-                            <p class="mb-2 text-xl text-gray-400 font-normal truncate">Amount: <span class="text-danger">$1,0000</span></p>
-                            <p class="text-warning font-semibold text-sm">Amount saved: <span>$5,000</span></p>
+                            <h5 class="text-gray-800 dark:text-white mb-1 capitalize ">{{ budget.title }}</h5>
+                            <p class="mb-2 text-l text-gray-400 font-normal truncate">Amount: <span class="text-danger">₦{{ budget.amount }}</span></p>
+                            <p class="text-warning font-semibold text-sm">Exceeded by <span>₦{{ budget.calculate_excess_amount }}</span></p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center gap-6">
-                        <img src="{% static '/img/users/user-3.jpg' %}" class="rounded-full h-16" alt="user">
-
-                        <div class="flex-grow overflow-hidden">
-                            <h5 class="text-gray-800 dark:text-white mb-1 capitalize ">school fee</h5>
-                            <p class="mb-2 text-xl text-gray-400 font-normal truncate">Amount: <span class="text-danger">$1,0000</span></p>
-                            <p class="text-warning font-semibold text-sm">Amount saved: <span>$5,000</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center gap-6">
-                        <img src="{% static '/img/users/user-3.jpg' %}" class="rounded-full h-16" alt="user">
-
-                        <div class="flex-grow overflow-hidden">
-                            <h5 class="text-gray-800 dark:text-white mb-1 capitalize ">Residential building</h5>
-                            <p class="mb-2 text-xl text-gray-400 font-normal truncate">Amount: <span class="text-danger">$1,0000</span></p>
-                            <p class="text-warning font-semibold text-sm">Amount saved: <span>$5,000</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>  <!-- card-end -->
-
-
+            {% endfor %}
             
         </div> <!-- grid-end -->
 
         <div class="grid xl:grid-cols-3 grid-cols-1 gap-6">
+
+            <!-- Budget start -->
             <div class="card">
                 <div class="p-6">
 
@@ -369,78 +221,22 @@
                                         <tr class="border-b-2 dark:border-gray-700">
                                             <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">#</th>
                                             <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Budget name</th>
-                                            <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Start Date</th>
                                             <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Status</th>
-                                            <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200"> credit card</th>
                                         </tr>
                                     </thead>
 
                                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                        {% for budget in top_5_budgets %}
                                         <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
                                             <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">1</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
+                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{ budget.title }}</td>
+
                                             
                                             <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
                                                 <span class="text-xs text-white bg-danger rounded-md px-1 py-0.5">Released</span>
                                             </td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
                                         </tr>
-
-                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">2</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Frontend v1</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">26/04/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                <span class="text-xs text-white bg-success rounded-md px-1 py-0.5">Released</span>
-                                            </td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto admin</td>
-                                        </tr>
-
-                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">3</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.1</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/05/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">10/05/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                <span class="text-xs text-white bg-pink rounded-md px-1 py-0.5">Pending</span>
-                                            </td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
-                                        </tr>
-
-                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">4</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Frontend v1.1</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                <span class="text-xs text-white bg-purple rounded-md px-1 py-0.5">Work in Progress</span>
-                                            </td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto admin</td>
-                                        </tr>
-
-                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">5</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.3</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                <span class="text-xs text-white bg-warning rounded-md px-1 py-0.5">Coming soon</span>
-                                            </td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
-                                        </tr>
-
-                                        <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">6</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.3</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                <span class="text-xs text-white bg-primary rounded-md px-1 py-0.5">Coming soon</span>
-                                            </td>
-                                            <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400"> Adminto admin</td>
-                                        </tr>
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -449,12 +245,14 @@
                 </div>
             </div> <!-- card-end -->
 
+
+            <!-- Transactions card start -->
             <div class="xl:col-span-2 col-span-1">
                 <div class="card">
                     <div class="p-6">
 
                         <div class="flex items-center justify-between mb-6">
-                            <h3 class="card-title">Transaction History</h3>
+                            <h3 class="card-title">Review Transaction</h3>
 
                             <div>
                                 <button data-fc-target="dropdown-target6" data-fc-type="dropdown" type="button" data-fc-placement="bottom-end">
@@ -485,80 +283,39 @@
                                         <thead>
                                             <tr class="border-b-2 dark:border-gray-700">
                                                 <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">#</th>
-                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200"></th>
-                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Start Date</th>
-                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Due Date</th>
-                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Status</th>
-                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200"> Assign</th>
+                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Date</th>
+                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Bank Account</th>
+                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Amount</th>
+                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Type</th>
+                                                <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200"> Budget</th>
                                             </tr>
                                         </thead>
 
                                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                            {% for transaction in all_debit_transactions %}
                                             <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
                                                 <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">1</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">26/04/2017</td>
+                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.date}}</td>
+                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.bank_account}}</td>
+                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.amount}}</td>
                                                 <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                    <span class="text-xs text-white bg-danger rounded-md px-1 py-0.5">Released</span>
+                                                    <span class="text-xs text-white bg-danger rounded-md px-1 py-0.5">{{transaction.type}}</span>
                                                 </td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
+                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                                                    <form hx-post="{% url 'update_transaction' transaction.pk %}" hx-target="this">
+                                                        {% csrf_token %}
+                                                        <select name="budget" id="budget">
+                                                            <option value="">--------</option> 
+                                                            {% for budget in budgets %}
+                                                                <option value="{{ budget.pk }}" {% if transaction.budget.pk == budget.pk %}selected{% endif %}>{{ budget.title }}</option>
+                                                            {% endfor %}
+                                                        </select>
+                                                        <button type="submit">Update</button>
+                                                    </form>
+                                                </td>
                                             </tr>
 
-                                            <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">2</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Frontend v1</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">26/04/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                    <span class="text-xs text-white bg-success rounded-md px-1 py-0.5">Released</span>
-                                                </td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto admin</td>
-                                            </tr>
-
-                                            <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">3</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.1</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/05/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">10/05/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                    <span class="text-xs text-white bg-pink rounded-md px-1 py-0.5">Pending</span>
-                                                </td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
-                                            </tr>
-
-                                            <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">4</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Frontend v1.1</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                    <span class="text-xs text-white bg-purple rounded-md px-1 py-0.5">Work in Progress</span>
-                                                </td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto admin</td>
-                                            </tr>
-
-                                            <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">5</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.3</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                    <span class="text-xs text-white bg-warning rounded-md px-1 py-0.5">Coming soon</span>
-                                                </td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Coderthemes</td>
-                                            </tr>
-
-                                            <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">6</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">Adminto Admin v1.3</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">01/01/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">31/05/2017</td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
-                                                    <span class="text-xs text-white bg-primary rounded-md px-1 py-0.5">Coming soon</span>
-                                                </td>
-                                                <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400"> Adminto admin</td>
-                                            </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
@@ -566,14 +323,99 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- card-end -->
-        </div> <!-- grid-end -->
+            </div> 
+            <!-- card-end -->
+
+        </div> 
+        <!-- grid-end -->
 
     </div> <!-- flex-end -->
 
 </main>
 
 
+<!-- myapp/templates/chart.html -->
+
+    
+<div>
+    <script>
+        var ctx1 = document.getElementById('networthChart').getContext('2d');
+        var labels = JSON.parse('{{ labels|safe }}');
+        var data = JSON.parse('{{ data|safe }}');
+        var myChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Credit History',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderWidth: 2,
+                    tension: 0.1,
+                    fill: true,
+                    pointStyle: function(context) {
+                        return context.dataIndex === context.dataset.data.length - 1 ? 'circle' : false;
+                    }
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+            legend: {
+                labels: {
+                    // This will remove the rectangle in front of the title
+                    boxWidth: 0
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                        display: true
+                        }
+                    },
+                    y: {
+                        display: false,
+                        title: {
+                        display: true,
+                        text: 'Value'
+                    },
+                }
+            }
+            }
+        });
+
+
+        var budget_ctx = document.getElementById('budgetChart').getContext('2d');
+        var difference = JSON.parse('{{ difference|safe }}');
+        var total_spent_from_budget = JSON.parse('{{ total_spent_from_budget|default:0|safe }}');
+
+        var myChart = new Chart(budget_ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Used','Unused'],
+                datasets: [{
+                    data: [total_spent_from_budget, difference],
+                    backgroundColor: ['rgb(255, 99, 132)', 'rgba(255, 99, 132, 0.2)']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '80%',
+            }
+        });
+    </script>
+</div>
+
+
+
 <h2>Account:</h2>
-<p>{{ account }}</p>
+<p>{{ transactions }}</p>
 {% endblock content %}

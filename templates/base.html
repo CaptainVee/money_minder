@@ -14,11 +14,16 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{% static '/img/favicon.ico' %}">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <!-- App css -->
     <link href="{% static '/css/app.min.css' %}" rel="stylesheet" type="text/css">
 
     <!-- Icons css -->
     <link href="{% static '/css/icons.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Django chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Theme Config Js -->
     <script src="{% static '/js/config.js' %}"></script>
@@ -32,7 +37,7 @@
         <div class="app-menu">
 
             <!-- Sidenav Brand Logo -->
-            <a href="dashboard.html" class="logo-box">
+            <a href="{% url 'dashboard' %}" class="logo-box">
                 <!-- Light Brand Logo -->
                 <div class="logo-light">
                     <img src="{% static '/img/logo-light.png' %}" class="logo-lg" alt="Light logo">
@@ -96,7 +101,7 @@
                     <li class="menu-title">Navigation</li>
 
                     <li class="menu-item">
-                        <a href="dashboard.html" class="menu-link">
+                        <a href="{% url 'dashboard' %}" class="menu-link">
                             <span class="menu-icon"><i class="mdi mdi-view-dashboard-outline"></i></span>
                             <span class="menu-text"> Dashboard </span>
                         </a>
@@ -112,7 +117,7 @@
                     </li>
 
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{% url 'accounts' %}" class="menu-link">
                             <span class="menu-icon"><i class="mdi mdi-forum-outline"></i></span>
                             <span class="menu-text"> Accounts </span>
                         </a>
@@ -149,7 +154,7 @@
                    
                     <li class="menu-title">My accounts</li>
                     <li class="menu-item">
-                        <a href="{% url 'connect' user.id %}" class="menu-link">
+                        <a href="{% url 'get_live_data' %}" class="menu-link">
                             <span class="menu-icon"><i class="mdi mdi-view-dashboard-outline"></i></span>
                             <span class="menu-text"> Link Account </span>
                         </a>
@@ -291,7 +296,7 @@
             <header class="app-header">
                 <div class="flex items-center px-6 gap-3">
                     <!-- Brand Logo -->
-                    <a href="dashboard.html" class="logo-box">
+                    <a href="{% url 'dashboard' %}" class="logo-box">
                         <!-- Light Brand Logo -->
                         <div class="logo-light">
                             <img src="{% static '/img/logo-light.png' %}" class="logo-lg" alt="Light logo">
@@ -689,6 +694,9 @@
 
     <!-- Dashboard App js -->
     <script src="{% static '/js/dashboard.init.js' %}"></script>
+
+    <!-- Htmx -->
+    <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
 
 </body>
 

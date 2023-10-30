@@ -31,7 +31,8 @@
       fetch("/collect/{{ user_id }}/?"+response.code)
         .then(response => {
           if (response.ok) {
-            window.location.href = "/dashboard/{{ user_id }}/";
+            var redirectUrl = "{% url 'accounts' %}";
+          window.location.href = redirectUrl;
           }
         });
 
