@@ -16,10 +16,12 @@ import dj_database_url
 import environ
 
 
-env = environ.Env()
-environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR,  ".env"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -160,5 +162,5 @@ LOGIN_URL = "account_login"
 AUTH_USER_MODEL = "user.User"
 
 
-MONO_SEC_KEY = env('MONO_SEC_KEY')
+MONO_SEC_KEY = os.environ.get('MONO_SEC_KEY')
 MONO_PUBLIC_KEY = env('MONO_PUBLIC_KEY')
