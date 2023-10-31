@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="">
+    <div class="overflow-x-auto">
+    <h1 class="text-xlg font-bold mb-2">Debit History</h1>
+    <div class="min-w-full inline-block align-middle">
+        <div class="overflow-hidden">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead>
+                    <tr class="border-b-2 dark:border-gray-700">
+                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">#</th>
+                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Date</th>
+                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Bank Account</th>
+                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Amount</th>
+                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200">Type</th>
+                        <th scope="col" class="px-4 py-4 text-start font-semibold text-gray-500 dark:text-gray-200"> Budget</th>
+                    </tr>
+                </thead>
+
+                <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                    {% for transaction in all_debit_transactions %}
+                    <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
+                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.pk}}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.date}}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.bank_account.bank }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.amount}}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                            <span class="text-xs text-white bg-danger rounded-md px-1 py-0.5">{{transaction.type}}</span>
+                        </td>
+                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                            <form hx-post="{% url 'update_transaction' transaction.pk %}" hx-target="this">
+                                {% csrf_token %}
+                                <select name="budget" id="budget">
+                                    <option value="">--------</option> 
+                                    {% for budget in budgets %}
+                                        <option value="{{ budget.pk }}" {% if transaction.budget.pk == budget.pk %}selected{% endif %}>{{ budget.title }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button type="submit">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

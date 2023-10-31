@@ -223,6 +223,13 @@ def accounts(request):
     return render(request, 'dashboard/account.html', {'accounts': accounts})
 
 @login_required
+def transactions(request):
+    accounts = BankAccount.objects.filter(user=request.user)
+    all_debit_transactions = Transaction.objects.filter(bank_account__in=accounts, budget=None, type='debit')
+    all_credit_transactions = Transaction.objects.filter(bank_account__in=accounts, type='credit')
+    return render(request, 'dashboard/transactions.html', {'all_debit_transactions': all_debit_transactions})
+
+@login_required
 def tester(request):
     return render(request, "dashboard/cow.html", {})
 

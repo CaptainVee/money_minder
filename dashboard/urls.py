@@ -8,7 +8,8 @@ from .views import (
     get_live_data,
     budget,
     update_transaction,
-    accounts
+    accounts,
+    transactions,
 )
 
 # app_name = "courses"
@@ -22,6 +23,7 @@ urlpatterns = [
     path("get_live_data/", get_live_data, name="get_live_data"),
     path("budget/", budget, name="budget"),
     path("accounts/", accounts, name="accounts"),
+    path("transactions/", transactions, name="transactions"),
 
     path('update_transaction/<int:transaction_id>/', update_transaction, name='update_transaction'),
 ]
