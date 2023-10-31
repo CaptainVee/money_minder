@@ -32,7 +32,7 @@ User = get_user_model()
 
 def home(request):
     if request.user.is_authenticated:
-        return render(request, "dashboard/dashboard.html", {})
+        return redirect('dashboard')
     else:
         return render(request, "landing_page.html", {})
 
