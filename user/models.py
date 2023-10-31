@@ -58,3 +58,6 @@ class BankAccount(BaseModel):
     account_balance = models.IntegerField(default=0)
     currency = models.CharField(max_length=10, null=True)
     auth_id = models.JSONField(max_length=100, blank=False, null=False)
+
+    def get_bank_name(self) -> str:
+        return self.bank[2:-3] 

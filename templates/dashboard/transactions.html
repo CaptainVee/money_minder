@@ -24,7 +24,7 @@
                     <tr class="transition-all hover:bg-gray-50 dark:hover:bg-gray-700/40">
                         <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.pk}}</td>
                         <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.date}}</td>
-                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.bank_account.bank }}</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.bank_account.get_bank_name }}</td>
                         <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">{{transaction.amount}}</td>
                         <td class="px-4 py-4 whitespace-nowrap text-gray-500 dark:text-gray-400">
                             <span class="text-xs text-white bg-danger rounded-md px-1 py-0.5">{{transaction.type}}</span>
