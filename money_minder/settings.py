@@ -31,7 +31,7 @@ env.read_env(os.path.join(BASE_DIR,  ".env"))
 SECRET_KEY = "django-insecure-n_12s8yisxijl^z#r9-m_pje9%6lh()f)p&#2^oylowfm+*@1e"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = ["*"]
 
@@ -101,17 +101,19 @@ WSGI_APPLICATION = "money_minder.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+if DEBUG == True:
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
-DATABASES = {
-        "default": dj_database_url.parse(env('DATABASE_URL'))
-}
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+else:
+    DATABASES = {
+            "default": dj_database_url.parse(env('DATABASE_URL'))
+    }
+    
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -162,5 +164,5 @@ LOGIN_URL = "account_login"
 AUTH_USER_MODEL = "user.User"
 
 
-MONO_SEC_KEY = os.environ.get('MONO_SEC_KEY')
+MONO_SEC_KEY = env('MONO_SEC_KEY')
 MONO_PUBLIC_KEY = env('MONO_PUBLIC_KEY')

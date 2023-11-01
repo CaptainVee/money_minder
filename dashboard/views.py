@@ -1,18 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-# from django.contrib.auth.models import User
-# from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-# from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
-# from .models import Organization
-# from .forms import ContributorForm
 from django.db.models import Sum
 import requests
 from django.conf import settings
 import json
 from user.models import Profile, BankAccount
-# import pandas as pd
 from django.contrib import messages
-# Create your views here.
 from .utils import generate_date_range
 from .models import Transaction, Budget, RecurringBills
 from datetime import datetime
@@ -141,10 +134,29 @@ def get_live_data(request):
 @login_required
 def dashboard(request):
     accounts = BankAccount.objects.filter(user=request.user)
-    networth = sum(account.account_balance for account in accounts)
-    all_debit_transactions = Transaction.objects.filter(bank_account__in=accounts, budget=None, type='debit')
-    all_credit_transactions = Transaction.objects.filter(bank_account__in=accounts, type='credit')
+    all_transactions = Transaction.objects.filter(bank_account__in=accounts)
 
+    networth = 0
+
+    for transaction in all_transactions:
+        if transaction.type == 'credit':
+            networth += transaction.amount
+        elif transaction.type == 'debit':
+            networth -= transaction.amount
+
+    all_debit_transactions = Transaction.objects.filter(bank_account__in=accounts, budget=None, type='debit').order_by('-date')
+    all_credit_transactions = Transaction.objects.filter(bank_account__in=accounts, type='credit').order_by('date')
+    networth_data = {}
+
+    for transaction in all_credit_transactions:
+        date = transaction.date.date()
+        if date in networth_data:
+            networth_data[date] += transaction.amount
+        else:
+            networth_data[date] = transaction.amount
+
+    networth_dates = list(networth_data.keys())
+    networth_values = list(networth_data.values())
     
     budgets = Budget.objects.filter(user=request.user, is_active=True)
 
@@ -171,13 +183,13 @@ def dashboard(request):
         .annotate(total_transaction_amount=Sum('transaction__amount'))
         .order_by('-total_transaction_amount')[:5]
     )
-
-    labels = [transaction.date.strftime("%d %b") for transaction in all_credit_transactions]
-    data = [float(transaction.amount) for transaction in all_credit_transactions]
+    labels = [date.strftime("%d %b") for date in networth_dates]
+    # labels = [transaction.date.strftime("%d %b") for transaction in all_credit_transactions]
+    data = [float(val) for val in networth_values]
 
     recurring_bills = RecurringBills.objects.filter(user=request.user)
 
-    # print(all_credit_transactions)
+
     context = {
         "networth": networth,
         "all_debit_transactions": all_debit_transactions,
