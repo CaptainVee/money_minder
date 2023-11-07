@@ -249,6 +249,11 @@ def tester(request):
 def investment(request):
     return render(request, "dashboard/investment.html", {})
 
+
+# @login_required
+# def recurring(request):
+#     return render(request, "dashboard/recurring.html", {})
+
 # total budget =  28583.13000000000
 
 # networth = ₦ 100000
