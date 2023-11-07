@@ -1,58 +1,47 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-        <!-- Features 1  start -->
-        <div class="bg-slate-700 card-title p-5 flex justify-between">
-            Featured Budget plan
-                                <!-- Create Budget  -->
-                                <div class="">
-                                    <a href="">
-                                        <button type="button" class="nav-link p-2">
-                                            <i class="fas fa-plus fa-2x"></i>
-                                        </button>
-                                    </a>
-                                </div>
+    <div class="bg-gray-800 p-5 flex justify-between">
+        <h1 class="text-white text-2xl">Featured Budget Plan</h1>
+        <div>
+            <a href="">
+                <button type="button" class="p-2">
+                    <i class="fas fa-plus text-white text-2xl"></i>
+                </button>
+            </a>
         </div>
-        <!-- Features1 end -->
+    </div>
 
-        <h2 class="text-2xl font-bold mb-4">Items</h2>
+    <div class="mx-5 mt-4">
+        <h2 class="text-2xl font-bold mb-4">Create Budget</h2>
         <form method="post" class="mb-4">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 border-gray-200 font-bold py-2 px-4 rounded">Create budget</button>
+            <button type="submit" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center mt-5">Create Budget</button>
         </form>
+
         <ul>
             {% for item in items %}
-            <li class="mb-2">{{ item.name }}</li>
+                <li class="mb-2">{{ item.name }}</li>
             {% endfor %}
         </ul>
+    </div>
 
-        <!-- Features2 start -->
-        <div class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
-            {% for budget in budgets %}
-            <div class="card">
-                <div class="p-6">
-                    <div class="flex items-center gap-6">
-                        <div dir="ltr">
-                            <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050" data-bgColor="#F9B9B9" value="{{ budget.calculate_total_transactons }}" data-skin="tron" data-angleOffset="180" data-readOnly="true" data-thickness=".15" data-max="{{ budget.amount }}"/>
-                        </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-5 mt-4">
+        {% for budget in budgets %}
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center gap-6">
+                    <div>
+                        <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f05050" data-bgColor="#F9B9B9" value="{{ budget.calculate_total_transactons }}" data-skin="tron" data-angleOffset="180" data-readOnly="true" data-thickness=".15" data-max="{{ budget.amount }}" />
+                    </div>
 
-                        <div class="flex-grow overflow-hidden">
-                            <h5 class="text-gray-800 dark:text-white mb-1 capitalize ">{{ budget.title }}</h5>
-                            <p class="mb-2 text-l text-gray-400 font-normal truncate">Amount: <span class="text-danger">${{ budget.amount }}</span></p>
-                            <p class="text-warning font-semibold text-sm">Exceeded by <span>${{ budget.calculate_excess_amount }}</span></p>
-                        </div>
+                    <div class="flex-grow overflow-hidden">
+                        <h5 class="text-gray-800 dark:text-white mb-1 capitalize">{{ budget.title }}</h5>
+                        <p class="mb-2 text-sm text-gray-400 font-normal truncate">Amount: <span class="text-red-500 font-bold">${{ budget.amount }}</span></p>
+                        <p class="text-yellow-500 font-semibold text-sm">Exceeded by <span>${{ budget.calculate_excess_amount }}</span></p>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-
-
-
-            
-        </div> <!-- grid-end -->
-
-        <div class="grid xl:grid-cols-3 grid-cols-1 gap-6">
-
-        <!-- Daily expences card end -->
+        {% endfor %}
+    </div>
 {% endblock content %}

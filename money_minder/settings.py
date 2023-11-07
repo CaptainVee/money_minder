@@ -32,6 +32,7 @@ SECRET_KEY = "django-insecure-n_12s8yisxijl^z#r9-m_pje9%6lh()f)p&#2^oylowfm+*@1e
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
+print("dsdsdsdsdsds", DEBUG)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -98,10 +99,9 @@ ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 
 WSGI_APPLICATION = "money_minder.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-if DEBUG == True:
+if DEBUG:
 
     DATABASES = {
         "default": {
@@ -113,7 +113,7 @@ else:
     DATABASES = {
             "default": dj_database_url.parse(env('DATABASE_URL'))
     }
-    
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

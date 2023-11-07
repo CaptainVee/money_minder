@@ -245,7 +245,9 @@ def transactions(request):
 def tester(request):
     return render(request, "dashboard/cow.html", {})
 
-
+@login_required
+def investment(request):
+    return render(request, "dashboard/investment.html", {})
 
 # total budget =  28583.13000000000
 
